@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+    
+    <table class="table table-dark table-striped table-hover">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Data de lançamento</th>
+                <th scope="col">Código</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for episode in episodes %}
+                <tr>
+                    <th scope="row">{{ episode.id }}</th>
+                    <td><a href="/episode/{{episode.id}}">{{ episode.name }}</a></td>
+                    <td>{{ episode.air_date }}</td>
+                    <td>{{ episode.episode }}</td>                    
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+
+{% endblock %}

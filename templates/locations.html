@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+    
+    <table class="table table-dark table-striped table-hover">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Tipo</th>
+                <th scope="col">Dimensão</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for location in locations %}
+                <tr>
+                    <th scope="row">{{ location.id }}</th>
+                    <td><a href="/location/{{location.id}}">{{ location.name }}</a></td>
+                    <td>{{ location.type }}</td>
+                    <td>{{ location.dimension }}</td>                    
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+
+{% endblock %}

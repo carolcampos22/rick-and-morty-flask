@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h1 class="h1">{{ location.name }}</h1>
+<p>Tipo {{location.type}}, Dimensão {{location.dimension}}</p>
+<div class="row">
+    {% if location.residents %}
+    <h2 class="h3">Residentes desta dimensão</h2>
+    {% for resident in location.residents %}
+    <div class="col-3 col-xs-4">
+        <img src="{{resident.image}}" alt="{{resident.name}}" class="img-fluid img-thumbnail" />
+        <h3 class="h5">{{resident.name}}</h3>
+        <p>
+            <a href="/profile/{{resident.id}}" class="btn btn-primary">Ver perfil</a>
+        </p>
+    </div>
+    {% endfor %}
+    {% else %}
+    <div class="col-12">
+        <p>Nenhum residente encontrado.</p>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
