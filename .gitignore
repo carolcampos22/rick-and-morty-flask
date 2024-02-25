@@ -1,0 +1,21 @@
+# Arquivos e diretórios específicos do Python
+__pycache__/
+*.pyc
+
+# Arquivos específicos do ambiente virtual (se estiver usando um)
+venv/
+env/
+*.env
+
+# Arquivos específicos do sistema operacional
+.DS_Store
+Thumbs.db
+
+# Arquivos gerados durante a execução do aplicativo
+*.pyc
+*.pyo
+*.pyd
+*.pyc
+
+# Arquivos específicos do Flask
+instance/
